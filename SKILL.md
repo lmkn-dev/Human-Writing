@@ -1,3 +1,12 @@
+---
+name: human-writing
+description: Improves natural writing quality through voice matching, genre fidelity, sentence-rhythm variation, specificity, and level-appropriate language. Use when generating or rewriting prose that should match a person's voice, proficiency level, tone, or writing genre.
+license: MIT
+metadata:
+  author: lmkn-dev
+  version: "1.0.0"
+---
+
 # Human Writing Skill
 
 ## Purpose
@@ -154,7 +163,7 @@ Before finalizing, check for these failure modes.
 
 ### Remove excessive symmetry
 
-AI often creates exactly three equally developed points. Keep symmetry only when the task benefits from it.
+Model-generated prose often creates exactly three equally developed points. Keep symmetry only when the task benefits from it.
 
 ### Remove unnecessary signposting
 
@@ -206,7 +215,7 @@ When writing for school:
 
 ### Example
 
-AI-like:
+Generic model style:
 > The movie masterfully explores the multifaceted nature of interpersonal relationships, ultimately underscoring the complexity of human affection.
 
 Human/student-like:
@@ -282,4 +291,4 @@ Interpret these as tendencies, not rigid generation settings.
 
 A successful result should feel like someone had a clear thought and wrote it themselves.
 
-It should **not** feel like an AI tried to simulate a human by randomly making mistakes.
+It should **not** rely on artificial randomness or deliberate mistakes to create a sense of authenticity.

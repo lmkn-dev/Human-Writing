@@ -24,10 +24,10 @@ The goal is **natural authorship**, not detector evasion.
 human-writing-skill/
 ├── README.md
 ├── SKILL.md
-└── eval/
+└── Performance/
     ├── prompts.jsonl
     ├── run_eval.py
-    └── results_template.csv
+    └── results.csv
 ```
 
 ## Usage

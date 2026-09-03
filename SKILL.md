@@ -9,7 +9,7 @@ The goal is **not** to intentionally make writing bad. The goal is to preserve h
 Use this skill when the user asks for:
 - school or university writing
 - emails, messages, posts, comments, or essays
-- rewrites that should sound less AI-generated
+- rewrites that should sound more natural and less template-driven
 - writing that should match an existing personal style or proficiency level
 
 ---
@@ -148,7 +148,7 @@ Follow genre conventions before stylistic beautification.
 
 ---
 
-## Anti-AI Style Checks
+## Naturalness Quality Checks
 
 Before finalizing, check for these failure modes.
 
@@ -253,7 +253,7 @@ Unless the user requests otherwise:
 
 - Keep the requested length.
 - Preserve all factual requirements.
-- Do not mention that the text was made to appear human.
+- Do not add meta-commentary about the style transformation unless the user asks for it.
 - Do not claim that text is "undetectable" or guaranteed to bypass AI detectors.
 - Do not use deliberate misspellings as a default technique.
 - Prefer authenticity over artificial randomness.

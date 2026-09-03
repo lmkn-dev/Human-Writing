@@ -82,3 +82,7 @@ A strong result should not merely produce a lower classifier score. It should re
 ## Status
 
 This repository contains the current skill definition and a small recorded evaluation set. It does not include an automated evaluation runner.
+
+## License
+
+Released under the MIT License. See [LICENSE](LICENSE) for details.

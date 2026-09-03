@@ -1,0 +1,5 @@
+{"id":"school_comment","language":"en","prompt":"Write a 180-word school comment for an upper-secondary student on whether climate change is mainly an economic burden. Use clear economics reasoning, but keep the language realistic for a student."}
+{"id":"newspaper_article","language":"en","prompt":"Write a short newspaper-style article for school about a teenager realizing that a relationship is more complicated than expected. Keep it around 180 words and avoid sounding like a literary essay."}
+{"id":"business_explanation","language":"en","prompt":"Explain in about 160 words why global supply chains can make products cheaper but also create risks for companies. Write for a smart high-school economics student."}
+{"id":"linkedin_post","language":"en","prompt":"Write a 140-word LinkedIn post about building a small open-source library of reusable LLM agent skills. It should sound technically credible but not corporate or overhyped."}
+{"id":"casual_explanation","language":"de","prompt":"Erkläre in ungefähr 150 Wörtern, warum KI wahrscheinlich einige Jobs ersetzt, aber gleichzeitig neue Rollen schaffen kann. Schreib natürlich, direkt und auf Oberstufen-Niveau."}

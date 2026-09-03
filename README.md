@@ -92,20 +92,4 @@ A detector-only win can be misleading: detectors are probabilistic, model-depend
 
 > Adding the Human Writing Skill will reduce generic model-writing patterns and improve human-rated naturalness and voice consistency compared with the same model generating from the user prompt alone.
 
-## Reproducibility notes
 
-When publishing results, record:
-
-- model + exact version
-- date of test
-- temperature / sampling settings
-- checker name + version/date
-- raw outputs
-- raw checker scores
-- human rating rubric
-
-Do not cherry-pick prompts or rerun only the cases where one condition performs poorly.
-
-## License
-
-Add the license that fits your intended use. MIT is a common choice for a small public prompt/agent-skill repository.

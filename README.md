@@ -68,19 +68,6 @@ Recommended metrics:
 | Natural rhythm | Is sentence/paragraph structure varied without forced randomness? |
 | Meaning preservation | Did style changes alter the requested content? |
 
-### Run the eval
-
-```bash
-python eval/run_eval.py
-```
-
-By default the script builds the 10-case evaluation manifest and writes a CSV you can fill with outputs and checker scores.
-
-You can also pass generated outputs back into the CSV and calculate paired summary statistics:
-
-```bash
-python eval/run_eval.py --results eval/results.csv --summarize
-```
 
 ## Interpreting results
 

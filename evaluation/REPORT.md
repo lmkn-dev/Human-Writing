@@ -1,19 +1,27 @@
-# Human Writing Skill — Evaluation Report
+# Human Writing Skill — Exploratory Evaluation
 
 ## Scope
 
-Five prompts were run in two conditions:
+Five prompts were evaluated under two conditions:
 
-- `baseline`: prompt only
-- `skill`: the uploaded `SKILL.md` supplied as additional system context
+- `baseline`: user prompt only
+- `skill`: the same task with `SKILL.md` supplied as additional system context
 
-The same five task types were used in both conditions: school comment, newspaper article, business explanation, LinkedIn post, and German casual explanation.
+The five task types were:
 
-## Detector
+- school comment
+- newspaper article
+- business explanation
+- LinkedIn post
+- German casual explanation
+
+## Recorded metric
 
 Detector: Sapling AI Detector, accessed on 2026-09-03.
 
-`detector_score` is the displayed `Fake` percentage, interpreted here as the detector's AI-probability signal. It is not proof of authorship. The qualitative rating columns are intentionally blank because no independent human raters were used.
+`detector_score` is the displayed `Fake` percentage and is treated only as an external classifier signal. It is not proof of authorship.
+
+The qualitative columns in `results.csv` are intentionally blank because no independent human raters were used.
 
 ## Results
 
@@ -28,15 +36,28 @@ Detector: Sapling AI Detector, accessed on 2026-09-03.
 
 ## Interpretation
 
-The skill lowered the mean detector score by 19.6 percentage points in this small sample, but the result is driven almost entirely by the newspaper pair. It did not lower the score for the school or business text, and the LinkedIn score was already near zero without the skill.
+In this small sample, the mean external classifier score was 19.6 percentage points lower with the skill enabled.
 
-The useful conclusion is therefore not that the skill reliably bypasses a detector. It appears to improve genre fit and naturalness in some cases, while detector behavior remains inconsistent across genres and languages. More prompts, repeated generations, and independent human ratings would be needed for a stronger claim.
+That difference is driven almost entirely by the newspaper-article pair. The school and business cases were unchanged, while the LinkedIn case was already near zero in the baseline condition.
+
+No conclusion about improved naturalness, voice match, genre fidelity, specificity, or meaning preservation can be drawn from this dataset because those properties were not independently rated.
+
+The result should therefore be treated as an exploratory observation about one classifier on one small set of outputs, not as a benchmark or detector-bypass claim.
 
 ## Evaluation artifacts
 
-The complete recorded outputs and scores are available in `results.csv`, and the corresponding task prompts are stored in `prompts.jsonl`.
+- `prompts.jsonl` contains the five task prompts.
+- `results.csv` contains the generated outputs, conditions, and recorded classifier scores.
 
-This repository does not currently include an automated evaluation runner or a fully specified generation environment. As a result, the included comparison should be treated as a recorded evaluation sample rather than a fully reproducible benchmark.
+## Limitations
 
-For future reproducibility, document the model version, sampling settings, token limits, system context, generation date, and detector version alongside each run.
+This evaluation does not currently provide:
 
+- repeated generations per prompt
+- documented model and sampling settings
+- independent human ratings
+- multiple external classifiers
+- a fully specified generation environment
+- an automated evaluation runner
+
+A stronger future evaluation should add those controls before making claims about writing quality or general performance.

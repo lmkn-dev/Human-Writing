@@ -1,88 +1,81 @@
-# Human Writing Skill
+# Human Writing
 
-A reusable writing skill for LLM agents focused on **voice matching, natural sentence rhythm, genre fidelity, and stylistic specificity**.
+A reusable Agent Skill for producing more natural, voice-aware writing without relying on deliberate mistakes or artificial randomness.
 
-The skill helps reduce generic, overly polished, or template-driven model prose while preserving the writer's intended meaning, level, tone, and format.
+It focuses on **voice matching, genre fidelity, sentence rhythm, specificity, and level-appropriate language**.
 
-## Overview
+## Features
 
-`SKILL.md` provides guidance for generating or rewriting text with a stronger sense of authorship. Its main principles include:
+- matches a demonstrated writing level and voice
+- reduces repetitive, template-driven prose
+- varies sentence and paragraph rhythm naturally
+- prioritizes concrete details over generic filler
+- preserves meaning, stance, tone, and genre
+- supports school, university, professional, and casual writing
 
-- matching the writer's demonstrated language level and voice
-- varying sentence and paragraph rhythm naturally
-- preferring concrete details over generic filler
-- reducing excessive signposting and repetitive structures
-- avoiding unnecessary sophistication and stock model phrasing
-- preserving the user's stance, meaning, and requested genre
-- keeping school writing plausible for the student's actual level
+## Installation
 
-The objective is better writing quality and stylistic fit, not deliberate grammar degradation or guaranteed detector avoidance.
+Clone the repository into a lowercase skill directory:
+
+```bash
+git clone https://github.com/lmkn-dev/Human-Writing.git human-writing
+```
+
+Then place or reference the `human-writing` directory from your agent's skills location.
+
+The skill follows the Agent Skills `SKILL.md` format and includes the required discovery metadata in YAML frontmatter.
+
+## Usage
+
+Use the skill when generating or rewriting prose that should sound natural and match a specific writer, proficiency level, tone, or format.
+
+Conceptually:
+
+```text
+user prompt
+    +
+human-writing/SKILL.md
+    ↓
+model
+    ↓
+output
+```
+
+No runtime dependencies are required. The skill is instruction-only.
+
+## Validation
+
+The skill can be validated with the Agent Skills reference tooling:
+
+```bash
+skills-ref validate ./human-writing
+```
+
+## Evaluation
+
+The `evaluation/` directory contains a small paired exploratory evaluation across five writing tasks.
+
+The current dataset records:
+
+- baseline and skill-assisted outputs
+- one external classifier score per output
+
+It does **not** include independent human ratings. The classifier results therefore should not be interpreted as proof of authorship or as evidence that naturalness, voice match, or genre fidelity improved.
+
+See `evaluation/REPORT.md` for the recorded results and limitations.
 
 ## Repository structure
 
 ```text
-Human-Writing/
 ├── README.md
 ├── SKILL.md
+├── LICENSE
 └── evaluation/
     ├── REPORT.md
     ├── prompts.jsonl
     └── results.csv
 ```
 
-## Usage
-
-Load `SKILL.md` as an agent skill or include its instructions in the system or context layer before generating text.
-
-Conceptually:
-
-```text
-Baseline
-user prompt -> model -> output
-
-With skill
-SKILL.md + user prompt -> same model/settings -> output
-```
-
-For comparisons, keep the model, sampling settings, token limits, and user prompt consistent between conditions.
-
-## Evaluation
-
-The `evaluation/` directory contains a small paired comparison across five writing tasks:
-
-- school comment
-- newspaper article
-- business explanation
-- LinkedIn post
-- German casual explanation
-
-Each task has a baseline output and a corresponding output generated with the skill, for ten recorded outputs in total.
-
-`results.csv` contains the generated text and recorded detector scores. `REPORT.md` summarizes the comparison and its limitations. The detector signal is treated as a noisy external measurement rather than proof of authorship.
-
-The current sample is intentionally small and should not be interpreted as a benchmark of general model performance. A stronger evaluation would require repeated generations, documented model settings, broader prompts, and independent human ratings.
-
-## Evaluation criteria
-
-Useful criteria for future evaluations include:
-
-| Metric | Question |
-|---|---|
-| Voice match | Does the output plausibly match the requested writer? |
-| Genre fidelity | Does it follow the requested format and conventions? |
-| Specificity | Does it use concrete details instead of generic filler? |
-| Natural rhythm | Does sentence and paragraph structure vary naturally? |
-| Meaning preservation | Does the rewrite preserve the requested content? |
-| External classifier signal | What score does an external detector return, if measured? |
-
-## Design principle
-
-A strong result should not merely produce a lower classifier score. It should read more naturally, fit the requested voice and genre more closely, and preserve the underlying meaning.
-
-## Status
-
-This repository contains the current skill definition and a small recorded evaluation set. It does not include an automated evaluation runner.
-
 ## License
 
-Released under the MIT License. See [LICENSE](LICENSE) for details.
+MIT. See [LICENSE](LICENSE).
